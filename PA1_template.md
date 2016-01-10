@@ -32,8 +32,8 @@ barplot(sumsteps$steps, names.arg = sumsteps$date, xlab = "date", ylab = "no. of
 mean_sumsteps=mean(sumsteps$steps)
 median_sumsteps=median(sumsteps$steps)
 ```
-mean=`mean_sumsteps`
-median=`median_sumsteps`
+mean=1.0766189 &times; 10<sup>4</sup>
+median=10765
 
 ## What is the average daily activity pattern?
 
@@ -56,7 +56,7 @@ plot(meansteps,type="l",ylab="mean no. of steps")
 ```r
 interval_maxstep=meansteps$interval[which.max(meansteps$steps)]
 ```
-interval=`interval_maxstep`
+interval=835
 
 ## Imputing missing values
 
@@ -66,7 +66,7 @@ interval=`interval_maxstep`
 ```r
 n_na=sum(is.na(activity))
 ```
-Number of NA's=n_na
+Number of NA's=2304
 
 2. Devise a strategy for filling in all of the missing values in the dataset. The strategy does not need to be sophisticated. For example, you could use the mean/median for that day, or the mean for that 5-minute interval, etc.
 
@@ -99,8 +99,8 @@ barplot(sumsteps_2$steps, names.arg = sumsteps_2$date, xlab = "date", ylab = "no
 mean_sumsteps_2=mean(sumsteps_2$steps)
 median_sumsteps_2=median(sumsteps_2$steps)
 ```
-mean_2=`mean_sumsteps_2`
-median_2=`median_sumsteps_2`
+mean_2=1.0766189 &times; 10<sup>4</sup>
+median_2=1.0766189 &times; 10<sup>4</sup>
 
 Answer: Impact is small.
 
