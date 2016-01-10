@@ -5,7 +5,8 @@
 1. Load the data (i.e. read.csv())
 2. Process/transform the data (if necessary) into a format suitable for your analysis
 
-```{r sim_1, echo=TRUE}
+
+```r
 file="activity.csv"
 activity=read.csv(file)
 ```
@@ -13,16 +14,21 @@ activity=read.csv(file)
 
 1. Make a histogram of the total number of steps taken each day
 
-```{r sim_2, echo=TRUE}
+
+```r
 sumsteps=aggregate(steps ~ date, data = activity, FUN = sum)
 ```
-```{r sim_2_plot,fig.height=4}
+
+```r
 barplot(sumsteps$steps, names.arg = sumsteps$date, xlab = "date", ylab = "no. of steps")
 ```
 
+![plot of chunk sim_2_plot](figure/sim_2_plot-1.png) 
+
 2. Calculate and report the mean and median total number of steps taken per day
 
-```{r sim_3, echo=TRUE}
+
+```r
 mean_sumsteps=mean(sumsteps$steps)
 median_sumsteps=median(sumsteps$steps)
 ```
@@ -33,16 +39,21 @@ median=`median_sumsteps`
 
 1. Make a time series plot (i.e. type = "l") of the 5-minute interval (x-axis) and the average number of steps taken, averaged across all days (y-axis)
 
-```{r sim_4, echo=TRUE}
+
+```r
 meansteps=aggregate(steps ~ interval, data = activity, FUN = mean)
 ```
-```{r sim_4_plot,fig.height=4}
+
+```r
 plot(meansteps,type="l",ylab="mean no. of steps")
 ```
 
+![plot of chunk sim_4_plot](figure/sim_4_plot-1.png) 
+
 2. Which 5-minute interval, on average across all the days in the dataset, contains the maximum number of steps?
 
-```{r sim_5, echo=TRUE}
+
+```r
 interval_maxstep=meansteps$interval[which.max(meansteps$steps)]
 ```
 interval=`interval_maxstep`
@@ -51,7 +62,8 @@ interval=`interval_maxstep`
 
 1.Calculate and report the total number of missing values in the dataset (i.e. the total number of rows with NA's)
 
-```{r sim_6, echo=TRUE}
+
+```r
 n_na=sum(is.na(activity))
 ```
 Number of NA's=n_na
@@ -60,7 +72,8 @@ Number of NA's=n_na
 
 3. Create a new dataset that is equal to the original dataset but with the missing data filled in.
 
-```{r sim_7, echo=TRUE}
+
+```r
 activity_2=merge(activity, meansteps, by = "interval", suffixes = c("", ".mean"))
 nas=is.na(activity_2$steps)
 activity_2$steps[nas]=activity_2$steps.mean[nas]
@@ -69,13 +82,18 @@ activity_2=activity_2[, c(1:3)]
 
 4. Make a histogram of the total number of steps taken each day and Calculate and report the mean and median total number of steps taken per day. Do these values differ from the estimates from the first part of the assignment? What is the impact of imputing missing data on the estimates of the total daily number of steps?
 
-```{r sim_8, echo=TRUE}
+
+```r
 sumsteps_2=aggregate(steps ~ date, data = activity_2, FUN = sum)
 ```
-```{r sim_8_plot,fig.height=4}
+
+```r
 barplot(sumsteps_2$steps, names.arg = sumsteps_2$date, xlab = "date", ylab = "no. of steps")
 ```
-```{r sim_8_print,echo=TRUE}
+
+![plot of chunk sim_8_plot](figure/sim_8_plot-1.png) 
+
+```r
 mean_sumsteps_2=mean(sumsteps_2$steps)
 median_sumsteps_2=median(sumsteps_2$steps)
 ```
@@ -87,7 +105,8 @@ Answer: Impact is small.
 
 1. Create a new factor variable in the dataset with two levels -- "weekday" and "weekend" indicating whether a given date is a weekday or weekend day.
 
-```{r sim_9, echo=TRUE}
+
+```r
 daytype=function(date) {
   if (weekdays(as.Date(date)) %in% c("Saturday", "Sunday")) {
     "weekend"
@@ -100,7 +119,8 @@ activity_2$daytype=as.factor(sapply(activity_2$date, daytype))
 
 2. Make a panel plot containing a time series plot (i.e. type = "l") of the 5-minute interval (x-axis) and the average number of steps taken, averaged across all weekday days or weekend days (y-axis). The plot should look something like the following, which was created using simulated data:
 
-```{r sim_10, fig.height=4}
+
+```r
 par(mfrow = c(2, 1))
 for (type in c("weekend", "weekday")) {
     meansteps_2=aggregate(steps ~ interval, data = activity_2, 
@@ -108,3 +128,5 @@ for (type in c("weekend", "weekday")) {
     plot(meansteps_2, type = "l", main = type)
 }
 ```
+
+![plot of chunk sim_10](figure/sim_10-1.png) 
