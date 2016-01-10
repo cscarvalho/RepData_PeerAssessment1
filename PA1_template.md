@@ -70,7 +70,7 @@ Number of NA's=2304
 
 2. Devise a strategy for filling in all of the missing values in the dataset. The strategy does not need to be sophisticated. For example, you could use the mean/median for that day, or the mean for that 5-minute interval, etc.
 
-Answer: Use the mean for the for the 5-minute interval.
+Answer: Use the mean for the 5-minute interval.
 
 3. Create a new dataset that is equal to the original dataset but with the missing data filled in.
 
