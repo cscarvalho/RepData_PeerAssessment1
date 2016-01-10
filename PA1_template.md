@@ -33,6 +33,7 @@ mean_sumsteps=mean(sumsteps$steps)
 median_sumsteps=median(sumsteps$steps)
 ```
 mean=1.0766189 &times; 10<sup>4</sup>
+
 median=10765
 
 ## What is the average daily activity pattern?
@@ -99,8 +100,9 @@ barplot(sumsteps_2$steps, names.arg = sumsteps_2$date, xlab = "date", ylab = "no
 mean_sumsteps_2=mean(sumsteps_2$steps)
 median_sumsteps_2=median(sumsteps_2$steps)
 ```
-mean_2=1.0766189 &times; 10<sup>4</sup>
-median_2=1.0766189 &times; 10<sup>4</sup>
+mean=1.0766189 &times; 10<sup>4</sup>
+
+median=1.0766189 &times; 10<sup>4</sup>
 
 Answer: Impact is small.
 
