@@ -10,7 +10,7 @@
 file="activity.csv"
 activity=read.csv(file)
 ```
-## What is mean total number of steps taken per day? [For this part of the assignment, you can ignore the missing values in the dataset.]
+## What is the mean total number of steps taken per day? [For this part of the assignment, you can ignore the missing values in the dataset.]
 
 1. Make a histogram of the total number of steps taken each day
 
@@ -60,7 +60,7 @@ interval=`interval_maxstep`
 
 ## Imputing missing values
 
-1.Calculate and report the total number of missing values in the dataset (i.e. the total number of rows with NA's)
+1. Calculate and report the total number of missing values in the dataset (i.e. the total number of rows with NA's)
 
 
 ```r
@@ -69,6 +69,8 @@ n_na=sum(is.na(activity))
 Number of NA's=n_na
 
 2. Devise a strategy for filling in all of the missing values in the dataset. The strategy does not need to be sophisticated. For example, you could use the mean/median for that day, or the mean for that 5-minute interval, etc.
+
+Answer: Use the mean for the for the 5-minute interval.
 
 3. Create a new dataset that is equal to the original dataset but with the missing data filled in.
 
@@ -99,6 +101,7 @@ median_sumsteps_2=median(sumsteps_2$steps)
 ```
 mean_2=`mean_sumsteps_2`
 median_2=`median_sumsteps_2`
+
 Answer: Impact is small.
 
 ## Are there differences in activity patterns between weekdays and weekends? [For this part the weekdays() function may be of some help here. Use the dataset with the filled-in missing values for this part.]
