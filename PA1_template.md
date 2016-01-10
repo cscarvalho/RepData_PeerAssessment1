@@ -1,6 +1,6 @@
-## Reproducible Research: Peer Assessment 1
+# Reproducible Research: Peer Assessment 1
  
-# Loading and preprocessing the data
+## Loading and preprocessing the data
 
 1. Load the data (i.e. read.csv())
 2. Process/transform the data (if necessary) into a format suitable for your analysis
@@ -10,7 +10,7 @@
 file="activity.csv"
 activity=read.csv(file)
 ```
-# What is mean total number of steps taken per day? [For this part of the assignment, you can ignore the missing values in the dataset.]
+## What is mean total number of steps taken per day? [For this part of the assignment, you can ignore the missing values in the dataset.]
 
 1. Make a histogram of the total number of steps taken each day
 
@@ -35,7 +35,7 @@ median_sumsteps=median(sumsteps$steps)
 mean=`mean_sumsteps`
 median=`median_sumsteps`
 
-# What is the average daily activity pattern?
+## What is the average daily activity pattern?
 
 1. Make a time series plot (i.e. type = "l") of the 5-minute interval (x-axis) and the average number of steps taken, averaged across all days (y-axis)
 
@@ -58,7 +58,7 @@ interval_maxstep=meansteps$interval[which.max(meansteps$steps)]
 ```
 interval=`interval_maxstep`
 
-# Imputing missing values
+## Imputing missing values
 
 1.Calculate and report the total number of missing values in the dataset (i.e. the total number of rows with NA's)
 
@@ -101,7 +101,7 @@ mean_2=`mean_sumsteps_2`
 median_2=`median_sumsteps_2`
 Answer: Impact is small.
 
-# Are there differences in activity patterns between weekdays and weekends? [For this part the weekdays() function may be of some help here. Use the dataset with the filled-in missing values for this part.]
+## Are there differences in activity patterns between weekdays and weekends? [For this part the weekdays() function may be of some help here. Use the dataset with the filled-in missing values for this part.]
 
 1. Create a new factor variable in the dataset with two levels -- "weekday" and "weekend" indicating whether a given date is a weekday or weekend day.
 

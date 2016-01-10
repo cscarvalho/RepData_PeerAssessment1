@@ -201,9 +201,9 @@ hr {
 </head>
 
 <body>
-<h2>Reproducible Research: Peer Assessment 1</h2>
+<h1>Reproducible Research: Peer Assessment 1</h1>
 
-<h1>Loading and preprocessing the data</h1>
+<h2>Loading and preprocessing the data</h2>
 
 <ol>
 <li>Load the data (i.e. read.csv())</li>
@@ -214,7 +214,7 @@ hr {
 activity=read.csv(file)
 </code></pre>
 
-<h1>What is mean total number of steps taken per day? [For this part of the assignment, you can ignore the missing values in the dataset.]</h1>
+<h2>What is mean total number of steps taken per day? [For this part of the assignment, you can ignore the missing values in the dataset.]</h2>
 
 <ol>
 <li>Make a histogram of the total number of steps taken each day</li>
@@ -239,7 +239,7 @@ median_sumsteps=median(sumsteps$steps)
 <p>mean=<code>mean_sumsteps</code>
 median=<code>median_sumsteps</code></p>
 
-<h1>What is the average daily activity pattern?</h1>
+<h2>What is the average daily activity pattern?</h2>
 
 <ol>
 <li>Make a time series plot (i.e. type = &ldquo;l&rdquo;) of the 5-minute interval (x-axis) and the average number of steps taken, averaged across all days (y-axis)</li>
@@ -262,7 +262,7 @@ median=<code>median_sumsteps</code></p>
 
 <p>interval=<code>interval_maxstep</code></p>
 
-<h1>Imputing missing values</h1>
+<h2>Imputing missing values</h2>
 
 <p>1.Calculate and report the total number of missing values in the dataset (i.e. the total number of rows with NA&#39;s)</p>
 
@@ -302,7 +302,7 @@ median_sumsteps_2=median(sumsteps_2$steps)
 median_2=<code>median_sumsteps_2</code>
 Answer: Impact is small.</p>
 
-<h1>Are there differences in activity patterns between weekdays and weekends? [For this part the weekdays() function may be of some help here. Use the dataset with the filled-in missing values for this part.]</h1>
+<h2>Are there differences in activity patterns between weekdays and weekends? [For this part the weekdays() function may be of some help here. Use the dataset with the filled-in missing values for this part.]</h2>
 
 <ol>
 <li>Create a new factor variable in the dataset with two levels &ndash; &ldquo;weekday&rdquo; and &ldquo;weekend&rdquo; indicating whether a given date is a weekday or weekend day.</li>
